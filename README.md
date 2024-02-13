@@ -24,15 +24,16 @@ Como Utilizar
 ## Dicas
 Para aproveitar ao máximo este repositório, você pode explorar os seguintes diretórios:
 
-## Aulas:
+### Aulas:
 Aqui você encontrará os códigos e materiais utilizados durante as aulas ministradas pelo Prof. Maromo.
 
-## Projetos: 
+### Projetos: 
 Esta seção contém projetos práticos para aplicar os conceitos aprendidos em aula.
 
-## Recursos: 
+### Recursos: 
 Este diretório inclui materiais complementares, como documentos de referência, links úteis e sugestões de leitura.
-## Contribuindo
+
+### Contribuindo
 
 Sinta-se à vontade para contribuir com este repositório! Se você tem algum código interessante, projeto prático ou recurso útil que gostaria de compartilhar com a comunidade, fique à vontade para enviar um pull request.
 
