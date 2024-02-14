@@ -3,7 +3,7 @@ void main(List<String> args) {
     'Maromo': '19-99999-9999',
     'Pedro': '19-88888-8888',
   };
-  print(fones is Map);
+
   print(fones);
   print('Telefone do Maromo é: ' + fones['Maromo'].toString());
   print(fones.keys);
