@@ -34,5 +34,7 @@ class Calculadora {
 
 void main(List<String> args) {
   Calculadora calculadora = Calculadora();
+  print(calculadora.subtracao(5, 2));
+
   print(calculadora.soma(5, 6));
 }

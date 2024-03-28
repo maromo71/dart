@@ -26,7 +26,5 @@ class Conta {
     return false;
   }
 
-  double get saldo {
-    return this._saldo;
-  }
+  double get saldo => this._saldo;
 }
