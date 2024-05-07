@@ -16,7 +16,7 @@ Widgets são as unidades básicas de construção de interfaces de usuário no F
 Stateless Widgets são widgets que não armazenam estado; suas propriedades são finais e não mudam. Eles são ideais para partes da UI que dependem exclusivamente da configuração inicial e do contexto em que são criados.
 
 #### Exemplo de Stateless Widget:
-\\\dart
+```dart
 class MyButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -28,13 +28,13 @@ class MyButton extends StatelessWidget {
     );
   }
 }
-\\\
+```
 
 #### Stateful Widgets
 Stateful Widgets mantêm estado que pode mudar durante a vida útil do widget. Eles são essenciais para UIs interativas, onde a aparência e a funcionalidade do widget podem mudar em resposta a eventos ou dados dinâmicos.
 
 #### Exemplo de Stateful Widget:
-\\\dart
+```dart
 class Counter extends StatefulWidget {
   @override
   _CounterState createState() => _CounterState();
@@ -62,7 +62,7 @@ class _CounterState extends State<Counter> {
     );
   }
 }
-\\\
+```
 
 ### 3. Navegação e Rotas no Flutter
 A navegação no Flutter é gerenciada por um widget chamado Navigator, que permite transitar entre diferentes telas ou "routes". As telas são empilhadas em uma pilha (stack) gerenciada pelo Navigator.
@@ -71,18 +71,18 @@ A navegação no Flutter é gerenciada por um widget chamado Navigator, que perm
 Criadas "on-the-fly" usando o método Navigator.push(), que empilha uma nova tela.
 
 #### Exemplo de Navegação Simples usando Navigator:
-\\\dart
+```dart
 Navigator.push(
   context,
   MaterialPageRoute(builder: (context) => NewScreen()),
 );
-\\\
+```
 
 #### Rotas Nomeadas
 Definidas no mapa de rotas do MaterialApp e referenciadas por um nome. Isso simplifica a navegação, especialmente em aplicativos grandes.
 
 #### Exemplo de Configuração de Rotas Nomeadas:
-\\\dart
+```dart
 MaterialApp(
   initialRoute: '/',
   routes: {
@@ -90,7 +90,7 @@ MaterialApp(
     '/details': (context) => DetailsPage(),
   },
 );
-\\\
+```
 
 # Parte 2: Gerenciamento de Estado e Ciclo de Vida dos Widgets
 
@@ -113,38 +113,38 @@ Utilizado quando o estado precisa ser compartilhado entre várias partes do apli
 Stateful Widgets têm um ciclo de vida mais complexo que os Stateless devido à sua natureza dinâmica. Os principais métodos do ciclo de vida incluem:
 
 #### initState()
-\\\dart
+```dart
 @override
 void initState() {
   super.initState();
   // Initialize state.
 }
-\\\
+```
 
 #### didChangeDependencies()
-\\\dart
+```dart
 @override
 void didChangeDependencies() {
   super.didChangeDependencies();
   // React to inherited widget changes.
 }
-\\\
+```
 
 #### dispose()
-\\\dart
+```dart
 @override
 void dispose() {
   // Clean up the controller when the widget is removed from the
   // widget tree.
   super.dispose();
 }
-\\\
+```
 
 ### 3. Navegação Avançada e Rotas
 Navegação Declarativa (Navegação 2.0) foi introduzida para lidar com estados mais complexos de navegação e para melhor integração com a web. Permite definir rotas de maneira declarativa no MaterialApp e gerenciar o estado de navegação como um estado de aplicativo.
 
 #### Exemplo de Navegação Declarativa
-\\\dart
+```dart
 MaterialApp(
   initialRoute: '/',
   routes: {
@@ -152,7 +152,7 @@ MaterialApp(
     '/details': (context) => DetailsPage(),
   },
 );
-\\\
+```
 
 Esta abordagem ajuda no gerenciamento de histórico e na integração com sistemas que dependem de URLs, como navegadores na web.
 
@@ -173,19 +173,19 @@ Para integrar Firebase com Flutter, os desenvolvedores precisam configurar o Fir
 - Configurar o Flutter com dependências específicas do Firebase, como firebase_core e outros pacotes para serviços específicos (por exemplo, firebase_auth para autenticação, cloud_firestore para banco de dados).
 - Inicializar o Firebase no código Flutter com `Firebase.initializeApp()` dentro do método `main()`.
 
-\\\dart
+```dart
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   runApp(MyApp());
 }
-\\\
+```
 
 ### 3. Serviços do Firebase Usados com Flutter
 #### Firebase Auth
 Oferece uma solução completa de autenticação que suporta autenticação por e-mail/senha, login através de redes sociais como Google, Facebook, Twitter e mais.
 
-\\\dart
+```dart
 FirebaseAuth auth = FirebaseAuth.instance;
 
 void signInWithEmailPassword(String email, String password) async {
@@ -199,12 +199,12 @@ void signInWithEmailPassword(String email, String password) async {
     print('Error signing in: $e');
   }
 }
-\\\
+```
 
 #### Cloud Firestore
 Um banco de dados NoSQL flexível e escalável para armazenamento de dados em tempo real.
 
-\\\dart
+```dart
 Firestore firestore = Firestore.instance;
 
 void addData() {
@@ -217,7 +217,7 @@ void addData() {
     print('Error adding document: $e');
   });
 }
-\\\
+```
 
 #### Firebase Storage
 Para armazenar e servir conteúdo gerado pelo usuário, como fotos e vídeos.
@@ -231,7 +231,7 @@ Para enviar notificações push e mensagens diretas aos usuários de forma efica
 ### Exemplo de Uso de Firebase em um App Flutter
 Implementação de um sistema de login simples com **Firebase Auth**.
 
-\\\dart
+```dart
 Future<User?> signInWithEmailPassword(String email, String password) async {
   try {
     final UserCredential result = await FirebaseAuth.instance.signInWithEmailAndPassword(
@@ -244,5 +244,5 @@ Future<User?> signInWithEmailPassword(String email, String password) async {
     return null;
   }
 }
-\\\
+```
 
