@@ -3,6 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:http_sample_fire/components/message_dialog_widget.dart';
 import '../model/person.dart';
 
+/// Classe que representa o formulário de entrada de dados.
+///
+/// Esta classe é responsável por criar um formulário de entrada de dados,
+/// com campos de nome e idade. Além disso, ela é responsável por criar,
+/// ler e excluir registros no Firebase database.
 class InputListForm extends StatefulWidget {
   const InputListForm({super.key, required this.title});
   final String title;
